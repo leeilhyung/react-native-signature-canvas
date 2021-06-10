@@ -13,6 +13,10 @@ const styles = StyleSheet.create({
     backgroundColor: "#FFF",
     flex: 1
   },
+  webviewContainer:{
+    height:"100%",
+    flex:0,
+  }
   loadingOverlayContainer: { position: "absolute", top: 0, bottom: 0, left: 0, right: 0, alignItems: "center", justifyContent: "center" },
 });
 
@@ -105,7 +109,7 @@ const SignatureView = forwardRef(({
   return (
     <View style={[styles.webBg, style]}>
       <WebView
-        style={[webviewContainerStyle]}
+        style={[styles.webviewContainer, webviewContainerStyle]}
         bounces={false}
         androidHardwareAccelerationDisabled={androidHardwareAccelerationDisabled}
         ref={webViewRef}
