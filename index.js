@@ -38,6 +38,8 @@ const SignatureView = forwardRef(({
   minWidth = 0.5,
   androidHardwareAccelerationDisabled = false,
   style = null,
+  webviewContainerStyle = null,
+
 }, ref) => {
   const [loading, setLoading] = useState(true);
   const webViewRef = useRef();
@@ -103,6 +105,7 @@ const SignatureView = forwardRef(({
   return (
     <View style={[styles.webBg, style]}>
       <WebView
+        style={[webviewContainerStyle]}
         bounces={false}
         androidHardwareAccelerationDisabled={androidHardwareAccelerationDisabled}
         ref={webViewRef}
